@@ -8,10 +8,10 @@
 #include <algorithm>
 #include <regex>
 
-#include <AnalyticsWrapper/helpers/JNIHelper.h>
 #include "factory_messages/HTMLFactory.h"
 
 #ifdef ANDROID
+#include <AnalyticsWrapper/helpers/JNIHelper.h>
 #include "jni.h"
 #endif
 
