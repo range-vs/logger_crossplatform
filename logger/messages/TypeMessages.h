@@ -2,8 +2,8 @@
 
 enum class LogType : int
 {
-	MESSAGE = 0,
-	WARNING,
-	ERROR,
-	CRITICAL_ERROR
+	LOG_MESSAGE = 0,
+	LOG_WARNING,
+	LOG_ERROR,
+	LOG_CRITICAL_ERROR
 };

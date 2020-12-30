@@ -34,10 +34,10 @@ HTML::Row CriticalErrorHTMLFileOutput::createTableLine(const std::string& msg)
 std::map<LogType, std::shared_ptr<BaseMessageHTMLFileOutput>> CreatorMessagesHTMLFileOutput::messageCreators
 (
 	{
-		{LogType::MESSAGE, std::make_shared<MessageHTMLFileOutput>()},
-		{LogType::ERROR, std::make_shared<ErrorHTMLFileOutput>()},
-		{LogType::WARNING, std::make_shared<WarningHTMLFileOutput>()},
-		{LogType::CRITICAL_ERROR, std::make_shared<CriticalErrorHTMLFileOutput>()}
+		{LogType::LOG_MESSAGE, std::make_shared<MessageHTMLFileOutput>()},
+		{LogType::LOG_ERROR, std::make_shared<ErrorHTMLFileOutput>()},
+		{LogType::LOG_WARNING, std::make_shared<WarningHTMLFileOutput>()},
+		{LogType::LOG_CRITICAL_ERROR, std::make_shared<CriticalErrorHTMLFileOutput>()}
 	}
 );
 

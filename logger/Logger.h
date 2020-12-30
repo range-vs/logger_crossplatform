@@ -84,7 +84,7 @@ inline void Logger::printToLog(const LogType& id, const std::string & file, cons
 	buffer << std::endl;
 	for (auto&& output : allOutputs)
 		output->message(id, buffer.str());
-	if(id == LogType::CRITICAL_ERROR)
+	if(id == LogType::LOG_CRITICAL_ERROR)
 	{
 		_init = false;
 		release();

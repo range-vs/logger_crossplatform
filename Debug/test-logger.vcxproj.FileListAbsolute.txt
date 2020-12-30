@@ -1,0 +1,2 @@
+E:\domini-games\src\logger_crossplatform\Debug\test-logger.exe
+E:\domini-games\src\logger_crossplatform\Debug\test-logger.pdb

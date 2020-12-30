@@ -27,10 +27,10 @@ std::string CriticalErrorTerminalOutput::createMessage(const std::string& msg)
 std::map<LogType, std::shared_ptr<BaseMessageTerminalOutput>> CreatorMessagesTerminalOutput::messageCreators
 (
 	{
-		{LogType::MESSAGE, std::make_shared<MessageTerminalOutput>()},
-		{LogType::ERROR, std::make_shared<ErrorTerminalOutput>()},
-		{LogType::WARNING, std::make_shared<WarningTerminalOutput>()},
-		{LogType::CRITICAL_ERROR, std::make_shared<CriticalErrorTerminalOutput>()}
+		{LogType::LOG_MESSAGE, std::make_shared<MessageTerminalOutput>()},
+		{LogType::LOG_ERROR, std::make_shared<ErrorTerminalOutput>()},
+		{LogType::LOG_WARNING, std::make_shared<WarningTerminalOutput>()},
+		{LogType::LOG_CRITICAL_ERROR, std::make_shared<CriticalErrorTerminalOutput>()}
 	}
 );
 

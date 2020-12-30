@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html title="Log for session HGE engine" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>.row{			  width: 100% ;			  font-size: 14pt;			  display: block;			}			.critical-error{			  background-color:red;			}			.error{			  background-color:orange;			}			.warning{			  background-color:yellow;			}			.message{			  background-color:green;			}			.header{			  text-align: center;			}			.panel-action{			  margin-left: 3% ;			}			.table{				width: 100%			}			.caption{			  font-size: 19pt			}</style>
+    <script>function panel_action(){				var buttons = ['critical-error', 'error', 'warning', 'message'];				var classes = ['.critical-error', '.error', '.warning', '.message'];					for (var i = 0; i < buttons.length; ++i) {						var elems = document.querySelectorAll(classes[i]);						var style = 'none';						if (document.getElementById(buttons[i]).checked) {							style = 'block';						}						for (var j = 0; j < elems.length; j++) {							elems[j].style.display = style;						}				}			}</script>
+  </head>
+  <body class="bg-light">
+    <h2 class="header">Log for session HGE engine</h2>
+    <div>
+      <h3>Время сессии: Wed Dec 30 19:49:19 2020</h3>
+      <h3>Наименование проекта: test project</h3>
+      <h3>Версия проекта: 0.0.1</h3>
+      <br>
+      <br>
+    </div>
+    <div>
+      <h3>Панель управления: </h3>
+      <input type="checkbox" checked id="critical-error" class="panel-action" onclick="panel_action()">
+      Критические ошибки
+      <br>
+      <input type="checkbox" checked id="error" class="panel-action" onclick="panel_action()">
+      Ошибки
+      <br>
+      <input type="checkbox" checked id="warning" class="panel-action" onclick="panel_action()">
+      Предупреждения
+      <br>
+      <input type="checkbox" checked id="message" class="panel-action" onclick="panel_action()">
+      Сообщения
+      <br>
+    </div>
+    <table class="table">
+      <caption class="caption">Лог сообщений</caption>
+    <tr class="row message">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 15. Message: 
+</th>
+</tr>
+<tr class="row message">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 16. Message: Любое сообщение 564664 
+</th>
+</tr>
+<tr class="row message">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 17. Message: ываывав 
+</th>
+</tr>
+<tr class="row message">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 18. Message: Любое сообщение 564664 6465 sadas 
+</th>
+</tr>
+<tr class="row warning">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 19. Message: 54634 
+</th>
+</tr>
+<tr class="row error">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 20. Message: Критическая ошибка, описание оной 
+</th>
+</tr>
+<tr class="row message">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 21. Message: Любое сообщение 564664 
+</th>
+</tr>
+<tr class="row error">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 22. Message: Критическая ошибка, описание оной2 
+</th>
+</tr>
+<tr class="row message">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 23. Message: Любое сообщение 564664 
+</th>
+</tr>
+<tr class="row critical-error">
+  <th>[Wed Dec 30 19:49:19 2020] File: E:\domini-games\src\logger_crossplatform\test-logger.cpp, function: main, line: 24. Message: Hello 15 my friend 29.453 ! 
+</th>
+</tr>
+</table></body></html>

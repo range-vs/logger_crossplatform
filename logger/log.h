@@ -43,7 +43,7 @@ bool log::debug(const char* file, const char* func, int line, Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::MESSAGE, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_MESSAGE, file, func, line, args...);
 	return true;
 }
 
@@ -52,7 +52,7 @@ bool log::error(const char* file, const char* func, int line, Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::ERROR, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_ERROR, file, func, line, args...);
 	return true;
 }
 
@@ -61,7 +61,7 @@ bool log::critical_error(const char* file, const char* func, int line, Args... a
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::CRITICAL_ERROR, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_CRITICAL_ERROR, file, func, line, args...);
 	return true;
 }
 
@@ -70,7 +70,7 @@ bool log::warning(const char* file, const char* func, int line, Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::WARNING, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_WARNING, file, func, line, args...);
 	return true;
 }
 
