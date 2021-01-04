@@ -14,7 +14,7 @@ class HTMLFileOutput: public BaseOutput
 	std::string end_html;
 
 public:
-	void init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params) override;
+	void init(const std::string& nameGame, const std::string& versionGame) override;
 	void message(const LogType& lt, const std::string& str) override;
 	~HTMLFileOutput()override;
 };

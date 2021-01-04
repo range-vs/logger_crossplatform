@@ -52,7 +52,7 @@ public:
 	template<class ...Args>
 	void printToLog(const LogType& id, const std::string& file, const std::string& func, int line, Args... args);
 
-	void init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params);
+	void init(const std::string& nameGame, const std::string& versionGame);
 	bool isInit()const noexcept;
 
 	~Logger()

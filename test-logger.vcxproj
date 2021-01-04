@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="logger\helpers\LoggerParams.cpp" />
     <ClCompile Include="logger\log.cpp" />
     <ClCompile Include="logger\Logger.cpp" />
     <ClCompile Include="logger\output\factory_messages\HTMLFactory.cpp" />
@@ -33,7 +32,6 @@
     <ClInclude Include="html\Document.h" />
     <ClInclude Include="html\Element.h" />
     <ClInclude Include="html\HTML.h" />
-    <ClInclude Include="logger\helpers\LoggerParams.h" />
     <ClInclude Include="logger\helpers\time_utils.h" />
     <ClInclude Include="logger\helpers\tuple_utils.h" />
     <ClInclude Include="logger\log.h" />
@@ -51,13 +49,13 @@
     <ProjectGuid>{65F4E6E8-9120-4153-BBAC-05379D2FF5FD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>testlogger</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -70,7 +68,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">

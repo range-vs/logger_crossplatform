@@ -11,7 +11,7 @@
 
 #include "factory_messages/TerminalFactory.h"
 
-void TerminalOutput::init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params)
+void TerminalOutput::init(const std::string& nameGame, const std::string& versionGame)
 {
 	// TODO: set russion local (in HGE engine)
 	std::cout << "Log for session HGE engine" << std::endl;

@@ -16,7 +16,7 @@
 
 #include "factory_messages/TerminalFactory.h"
 
-void VisualStudioOutput::init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params)
+void VisualStudioOutput::init(const std::string& nameGame, const std::string& versionGame)
 {
 	// TODO: set russion local (in HGE engine)
 	OutputDebugStringA("Log for session HGE engine\n");

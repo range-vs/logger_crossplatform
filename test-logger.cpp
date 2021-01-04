@@ -8,9 +8,7 @@ int main()
 	int a(546), b(34);
 	auto arg(std::to_string(a) + std::to_string(b));
 
-	LoggerParams lp;
-	lp.setPathToFile("log.html");
-	log_init("test project", "0.0.1", lp);
+	log_init("test project", "0.0.1");
 
 	log_debug();
 	log_debug("Любое сообщение", 564664);

@@ -26,7 +26,7 @@ LoggerPtr Logger::getInstance()
 	return instance;
 }
 
-void Logger::init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params)
+void Logger::init(const std::string& nameGame, const std::string& versionGame)
 {
 	_init = true;
 	allOutputs.emplace_back(std::make_shared<HTMLFileOutput>());
@@ -36,7 +36,7 @@ void Logger::init(const std::string& nameGame, const std::string& versionGame, c
 #endif
 
 	for (auto&& output : allOutputs)
-		output->init(nameGame, versionGame, params);
+		output->init(nameGame, versionGame);
 }
 
 void Logger::release()

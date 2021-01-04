@@ -78,9 +78,9 @@ std::string HTMLFileOutput::initScript()
 			}";
 }
 
-void HTMLFileOutput::init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params)
+void HTMLFileOutput::init(const std::string& nameGame, const std::string& versionGame)
 {
-	file.open(params.getPathToFile());
+	file.open("log.html");
 	if (!file)
 	{
 		// TODO: throw exception

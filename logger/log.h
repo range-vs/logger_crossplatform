@@ -6,8 +6,7 @@
 
 /*
 Использование: 
-Сначала инициализировать логгер методом log_init, и передать в него имя приложения,его версию (можно и пустые строки кинуть) и
-параметры инициализации (кроссплатформенные).
+Сначала инициализировать логгер методом log_init, и передать в него имя приложения,его версию (можно и пустые строки кинуть).
 Далее вызывать один из четырёх методов, в зависимости от логирования:
 - log_debug - сообщение;
 - log_error - ошибка;
@@ -22,7 +21,7 @@
 class log
 {
 public:
-	static void init(const std::string& nameGame, const std::string& versionGame, const LoggerParams& params);
+	static void init(const std::string& nameGame, const std::string& versionGame);
 
 	template<class ...Args >
 	static bool debug(const char* file, const char* func, int line, Args... args);
@@ -75,13 +74,13 @@ bool log::warning(const char* file, const char* func, int line, Args... args)
 }
 
 #ifndef NDEBUG
-#define log_init(name, version, p) log::init(name, version, p)
+#define log_init(name, version, p) log::init(name, version)
 #define log_debug(...) log::debug(__FILE__, __func__, __LINE__, __VA_ARGS__)
 #define log_error(...) log::error(__FILE__, __func__, __LINE__, __VA_ARGS__)
 #define log_critical_error(...) log::critical_error(__FILE__, __func__, __LINE__, __VA_ARGS__)
 #define log_warning(...) log::warning(__FILE__, __func__, __LINE__, __VA_ARGS__)
 #else
-#define log_init(name, version, p)
+#define log_init(name, version)
 #define log_debug(...) 
 #define log_error(...) 
 #define log_critical_error(...) 

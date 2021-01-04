@@ -29,9 +29,6 @@
     <ClCompile Include="logger\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="logger\helpers\LoggerParams.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="logger\output\factory_messages\TerminalFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -41,9 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger\messages\TypeMessages.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="logger\helpers\LoggerParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="logger\helpers\time_utils.h">
