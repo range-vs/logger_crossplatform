@@ -79,5 +79,8 @@
     <ClInclude Include="logger\log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="logger\Helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

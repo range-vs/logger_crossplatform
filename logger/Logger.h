@@ -50,7 +50,7 @@ public:
 	static LoggerPtr getInstance();
 
 	template<class ...Args>
-	void printToLog(const LogType& id, const std::string& file, const std::string& func, int line, Args... args);
+	void printToLog(const LogType& id, Args... args);
 
 	void init(const std::string& nameGame, const std::string& versionGame);
 	bool isInit()const noexcept;
@@ -76,10 +76,10 @@ inline auto Logger::pack_to_tuple(Args ...args)
 }
 
 template<class ...Args>
-inline void Logger::printToLog(const LogType& id, const std::string & file, const std::string & func, int line, Args... args)
+inline void Logger::printToLog(const LogType& id, Args... args)
 {
 	std::stringstream buffer;
-	buffer << "[" << TimeUtils::getCurrentTime() << "] File: " << file << ", function: " << func << ", line: " << line << ". Message: ";
+	buffer << "[" << TimeUtils::getCurrentTime() << "] ";
 	TupleHelper::foreachTuple(WriterParamsToBufferCallback(buffer, " "), pack_to_tuple(args...));
 	buffer << std::endl;
 	for (auto&& output : allOutputs)

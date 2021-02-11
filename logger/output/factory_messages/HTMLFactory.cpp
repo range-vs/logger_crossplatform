@@ -3,31 +3,37 @@
 #include "HTMLFactory.h"
 #include <string>
 
+#include <regex>
+
 HTML::Row MessageHTMLFileOutput::createTableLine(const std::string& msg)
 {
 	HTML::Row row;
-	row.addAttribute("class", "row message") << HTML::ColHeader(msg);
+	auto msgNew(std::regex_replace(msg, std::regex("\n"), "<br>"));
+	row.addAttribute("class", "row message") << HTML::ColHeader(msgNew);
 	return row;
 }
 
 HTML::Row WarningHTMLFileOutput::createTableLine(const std::string& msg)
 {
 	HTML::Row row;
-	row.addAttribute("class", "row warning") << HTML::ColHeader(msg);
+	auto msgNew(std::regex_replace(msg, std::regex("\n"), "<br>"));
+	row.addAttribute("class", "row warning") << HTML::ColHeader(msgNew);
 	return row;
 }
 
 HTML::Row ErrorHTMLFileOutput::createTableLine(const std::string& msg)
 {
 	HTML::Row row;
-	row.addAttribute("class", "row error") << HTML::ColHeader(msg);
+	auto msgNew(std::regex_replace(msg, std::regex("\n"), "<br>"));
+	row.addAttribute("class", "row error") << HTML::ColHeader(msgNew);
 	return row;
 }
 
 HTML::Row CriticalErrorHTMLFileOutput::createTableLine(const std::string& msg)
 {
 	HTML::Row row;
-	row.addAttribute("class", "row critical-error") << HTML::ColHeader(msg);
+	auto msgNew(std::regex_replace(msg, std::regex("\n"), "<br>"));
+	row.addAttribute("class", "row critical-error") << HTML::ColHeader(msgNew);
 	return row;
 }
 

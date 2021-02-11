@@ -17,69 +17,87 @@
 Каждый метод возвращает false, если логгер не инициализирован, или true, если логгер готов к работе.
 */
 
+#ifndef NDEBUG
 
 class log
 {
 public:
 	static void init(const std::string& nameGame, const std::string& versionGame);
+	
+	template<class ...Args >
+	static bool debug(Args... args);
 
 	template<class ...Args >
-	static bool debug(const char* file, const char* func, int line, Args... args);
+	static bool error(Args... args);
 
 	template<class ...Args >
-	static bool error(const char* file, const char* func, int line, Args... args);
+	static bool critical_error(Args... args);
 
 	template<class ...Args >
-	static bool critical_error(const char* file, const char* func, int line, Args... args);
-
-	template<class ...Args >
-	static bool warning(const char* file, const char* func, int line, Args... args);
+	static bool warning(Args... args);
 };
 
 
 template<class ...Args>
-bool log::debug(const char* file, const char* func, int line, Args... args)
+bool log::debug(Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::LOG_MESSAGE, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_MESSAGE, args...);
 	return true;
 }
 
 template<class ...Args>
-bool log::error(const char* file, const char* func, int line, Args... args)
+bool log::error(Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::LOG_ERROR, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_ERROR, args...);
 	return true;
 }
 
 template<class ...Args>
-bool log::critical_error(const char* file, const char* func, int line, Args... args)
+bool log::critical_error(Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::LOG_CRITICAL_ERROR, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_CRITICAL_ERROR, args...);
 	return true;
 }
 
 template<class ...Args>
-bool log::warning(const char* file, const char* func, int line, Args... args)
+bool log::warning(Args... args)
 {
 	if (!Logger::getInstance()->isInit())
 		return false;
-	Logger::getInstance()->printToLog(LogType::LOG_WARNING, file, func, line, args...);
+	Logger::getInstance()->printToLog(LogType::LOG_WARNING, args...);
 	return true;
 }
 
-#ifndef NDEBUG
-#define log_init(name, version, p) log::init(name, version)
-#define log_debug(...) log::debug(__FILE__, __func__, __LINE__, __VA_ARGS__)
-#define log_error(...) log::error(__FILE__, __func__, __LINE__, __VA_ARGS__)
-#define log_critical_error(...) log::critical_error(__FILE__, __func__, __LINE__, __VA_ARGS__)
-#define log_warning(...) log::warning(__FILE__, __func__, __LINE__, __VA_ARGS__)
+#define log_init(name, version) log::init(name, version)
+#define log_debug(...) log::debug(std::string("File: ") + __FILE__, std::string(", function: ") + __func__, ", line: " + std::to_string(__LINE__), ". Message: ", __VA_ARGS__)
+#define log_error(...) log::error(std::string("File: ") + __FILE__, std::string(", function: ") + __func__, ", line: " + std::to_string(__LINE__), ". Message: ", __VA_ARGS__)
+#define log_critical_error(...) log::critical_error(std::string("File: ") + __FILE__, std::string(", function: ") + __func__, ", line: " + std::to_string(__LINE__), ". Message: ", __VA_ARGS__)
+#define log_warning(...) log::warning(std::string("File: ") + __FILE__, std::string(", function: ") + __func__, ", line: " + std::to_string(__LINE__), ". Message: ", __VA_ARGS__)
 #else
+class log
+{
+public:
+	static void init(const std::string& nameGame, const std::string& versionGame){}
+
+	template<class ...Args >
+	static bool debug(Args... args) { return true; }
+
+	template<class ...Args >
+	static bool error(Args... args) { return true; }
+
+	template<class ...Args >
+	static bool critical_error(Args... args) { return true; }
+
+	template<class ...Args >
+	static bool warning(Args... args) { return true; }
+};
+
 #define log_init(name, version)
 #define log_debug(...) 
 #define log_error(...) 

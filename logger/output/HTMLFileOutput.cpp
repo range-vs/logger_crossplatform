@@ -10,10 +10,10 @@
 
 #include "factory_messages/HTMLFactory.h"
 
-#ifdef ANDROID
-#include <AnalyticsWrapper/helpers/JNIHelper.h>
-#include "jni.h"
-#endif
+//#ifdef ANDROID
+//#include <AnalyticsWrapper/helpers/JNIHelper.h>
+//#include "jni.h"
+//#endif
 
 std::string HTMLFileOutput::initStyles()
 {
@@ -33,6 +33,7 @@ std::string HTMLFileOutput::initStyles()
 			  width: 100% ;\
 			  font-size: 14pt;\
 			  display: block;\
+			  text-align: left\
 			}\
 			.critical-error{\
 			  background-color:red;\
@@ -80,7 +81,7 @@ std::string HTMLFileOutput::initScript()
 
 void HTMLFileOutput::init(const std::string& nameGame, const std::string& versionGame)
 {
-	file.open("log.html");
+	file.open("sdcard\Android\data\log.html");
 	if (!file)
 	{
 		// TODO: throw exception
